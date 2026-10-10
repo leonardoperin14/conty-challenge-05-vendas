@@ -97,13 +97,6 @@ A resposta do estorno inclui `applied_cents`, `excess_cents`, `status` e os hor�
 
 A solução aceita somente pedidos `paid` em BRL e usa uma loja fixa (`default-shop`). O banco protege IDs únicos, aplica as operações financeiras em transações e impõe que a soma dos estornos aplicados não ultrapasse o total do pedido. Pedidos existentes não aceitam alteração de total ou status. A API não implementa autenticação nem assinatura de webhook.
 
-## Nota para quem avalia
-
-Para começar, rode `npm ci`, `npm run seed` e `npm run dev`; depois confira os testes em `test/api.test.ts`, `test/attribution.test.ts` e `test/concurrency.test.ts`.
-A regra de atribuição está em `src/attribution.ts`, com cupom conhecido à frente do UTM.
-O que ficou de fora foi a integração com uma loja Shopify real, autenticação e validação da assinatura dos webhooks.
-A API também está limitada a uma loja fixa, pedidos pagos em BRL e não permite atualizar pedidos já registrados.
-
 ## Validação registrada
 
 Na validação documentada da entrega, `npm test` passou com 13 testes em 3 arquivos; `npm run build`, `npm run check` e `npm run seed` também concluíram. `npm ci` instalou 90 pacotes e não reportou vulnerabilidades. Uma primeira execução de testes sob concorrência excedeu o limite de tempo de um caso; a repetição isolada passou. O npm também exibiu um aviso `allow-scripts` para `esbuild`.
