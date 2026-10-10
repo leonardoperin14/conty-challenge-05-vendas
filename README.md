@@ -1,5 +1,7 @@
 # Vendas atribuídas a criadores
 
+[![CI](https://github.com/leonardoperin14/conty-challenge-05-vendas/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/leonardoperin14/conty-challenge-05-vendas/actions/workflows/ci.yml)
+
 API local para processar webhooks simulados de pedidos pagos e estornos, atribuir vendas a criadores e manter um histórico financeiro rastreável. Usa Fastify, TypeScript e SQLite; os valores monetários são armazenados em centavos de BRL.
 
 ## Fluxo da solução
